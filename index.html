@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Developer Portfolio - Showcasing my projects and skills">
+    <title>Developer Portfolio</title>
+    
+    <!-- Fonts: DM Serif Display for headings (elegant), Space Mono for code/accents -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/sections.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Portfolio</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            
+            <!-- Mobile menu toggle button -->
+            <!-- TODO: Add JavaScript for mobile menu toggle functionality -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section section-home">
+        <div class="container">
+            <div class="home-content">
+                <p class="home-greeting">Hallo, ik ben</p>
+                <h1 class="home-name">Jouw Naam</h1>
+                <p class="home-tagline">Full Stack Developer & Creative Problem Solver</p>
+                <p class="home-description">
+                    Ik bouw moderne webapplicaties met schone code en aandacht voor detail.
+                    Gepassioneerd door technologie en altijd op zoek naar nieuwe uitdagingen.
+                </p>
+                <div class="home-cta">
+                    <a href="#projects" class="btn btn-primary">Bekijk mijn werk</a>
+                    <a href="#contact" class="btn btn-secondary">Neem contact op</a>
+                </div>
+            </div>
+            
+            <!-- Decorative element -->
+            <div class="home-decoration">
+                <div class="decoration-circle"></div>
+                <div class="decoration-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section section-projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mijn Projects</h2>
+                <p class="section-subtitle">Een selectie van mijn recente werk</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-thumbnail">
+                            <!-- TODO: Replace with actual project thumbnail -->
+                            <div class="placeholder-image">Project 1</div>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>View Live</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>Source Code</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce Platform</h3>
+                        <p class="project-description">
+                            Een moderne e-commerce oplossing gebouwd met React en Node.js. 
+                            Inclusief shopping cart, betalingsintegratie en admin dashboard.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 2 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-thumbnail">
+                            <div class="placeholder-image">Project 2</div>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>View Live</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>Source Code</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">
+                            Productiviteits-app voor teams met real-time updates, 
+                            drag-and-drop functionaliteit en collaboratieve features.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Tailwind</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-thumbnail">
+                            <div class="placeholder-image">Project 3</div>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>View Live</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>Source Code</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-description">
+                            Minimalistisch portfolio met focus op performance en toegankelijkheid.
+                            Gebouwd met vanilla JavaScript en moderne CSS.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 4 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-thumbnail">
+                            <div class="placeholder-image">Project 4</div>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>View Live</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>Source Code</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Weather Dashboard</h3>
+                        <p class="project-description">
+                            Real-time weerdata visualisatie met grafieken en 7-dagen voorspelling.
+                            Integratie met meerdere weather APIs.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Chart.js</span>
+                            <span class="tag">API</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Neem Contact Op</h2>
+                <p class="section-subtitle">Laten we samenwerken aan jouw volgende project</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-text">
+                        Ik sta altijd open voor nieuwe projecten en samenwerkingen. 
+                        Stuur me een bericht en ik neem zo snel mogelijk contact met je op!
+                    </p>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:jouw.email@example.com" class="contact-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <div class="contact-link-content">
+                                <span class="contact-link-label">Email</span>
+                                <span class="contact-link-value">jouw.email@example.com</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://linkedin.com/in/jouwprofiel" class="contact-link" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            <div class="contact-link-content">
+                                <span class="contact-link-label">LinkedIn</span>
+                                <span class="contact-link-value">linkedin.com/in/jouwprofiel</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://github.com/jouwgebruikersnaam" class="contact-link" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            <div class="contact-link-content">
+                                <span class="contact-link-label">GitHub</span>
+                                <span class="contact-link-value">github.com/jouwgebruikersnaam</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Optional: Contact form placeholder -->
+                <!-- TODO: Add JavaScript for form validation and submission -->
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Naam</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Bericht</label>
+                            <textarea id="message" name="message" class="form-input form-textarea" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">Verstuur Bericht</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                &copy; 2024 Developer Portfolio. Gebouwd met ❤️ en koffie.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 
+    ============================================
+    TODO: JavaScript Integration Points
+    ============================================
+    
+    Add your custom JavaScript functionality here or in a separate JS file:
+    
+    1. MOBILE MENU TOGGLE
+       - Target: #navToggle button
+       - Action: Toggle 'active' class on #navMenu
+       - Bonus: Add smooth transition animations
+    
+    2. SMOOTH SCROLL
+       - Target: All .nav-link elements
+       - Action: Smooth scroll to section on click
+       - Tip: Use scrollIntoView() or custom scroll animation
+    
+    3. NAVBAR SCROLL EFFECT
+       - Target: #navbar
+       - Action: Add 'scrolled' class when scrolling down
+       - Tip: Use window.addEventListener('scroll', ...)
+    
+    4. PROJECT CARD ANIMATIONS
+       - Target: .project-card elements
+       - Action: Add entrance animations on scroll
+       - Tip: Use Intersection Observer API
+    
+    5. FORM VALIDATION & SUBMISSION
+       - Target: #contactForm
+       - Action: Validate inputs and handle submission
+       - Tip: preventDefault() and add custom validation
+    
+    6. HOVER INTERACTIONS
+       - Target: Various elements
+       - Action: Custom cursor effects, parallax, etc.
+       - Tip: Track mouse position and apply transforms
+    
+    Example starter code:
+    
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+    
+    // Smooth scroll
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+    
+    ============================================
+    -->
+</body>
+</html>
