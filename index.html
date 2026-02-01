@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Developer Portfolio - Showcasing my projects and skills">
     <title>Developer Portfolio</title>
-    
+
     <!-- Fonts: DM Serif Display for headings (elegant), Space Mono for code/accents -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/sections.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -24,7 +28,7 @@
                 <span class="logo-text">Portfolio</span>
                 <span class="logo-bracket">/&gt;</span>
             </a>
-            
+
             <!-- Mobile menu toggle button -->
             <!-- TODO: Add JavaScript for mobile menu toggle functionality -->
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -32,7 +36,7 @@
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
             </button>
-            
+
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -57,7 +61,7 @@
                     <a href="#contact" class="btn btn-secondary">Neem contact op</a>
                 </div>
             </div>
-            
+
             <!-- Decorative element -->
             <div class="home-decoration">
                 <div class="decoration-circle"></div>
@@ -73,28 +77,31 @@
                 <h2 class="section-title">Mijn Projects</h2>
                 <p class="section-subtitle">Een selectie van mijn recente werk</p>
             </div>
-            
+
             <div class="projects-grid">
                 <!-- Project Card 1 -->
                 <article class="project-card">
                     <div class="project-image">
                         <div class="project-thumbnail">
-                            <!-- TODO: Replace with actual project thumbnail -->
-                            <div class="placeholder-image">Project 1</div>
+                            <img class="placeholder-image" src="img/habit-tracker.png">
                         </div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                <a href="https://findiepman.github.io/Good-habit-tracker/" class="project-link"
+                                    target="_blank" rel="noopener">
                                     <span>View Live</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                         <polyline points="15 3 21 3 21 9"></polyline>
                                         <line x1="10" y1="14" x2="21" y2="3"></line>
                                     </svg>
                                 </a>
-                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                <a href="https://github.com/Findiepman/Good-habit-tracker" class="project-link"
+                                    target="_blank" rel="noopener">
                                     <span>Source Code</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
                                         <polyline points="16 18 22 12 16 6"></polyline>
                                         <polyline points="8 6 2 12 8 18"></polyline>
                                     </svg>
@@ -103,15 +110,17 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">E-commerce Platform</h3>
+                        <h3 class="project-title">Good habit tracker</h3>
                         <p class="project-description">
-                            Een moderne e-commerce oplossing gebouwd met React en Node.js. 
-                            Inclusief shopping cart, betalingsintegratie en admin dashboard.
+                            Een habit tracker gebouwd met HTML&CSS en vanilla JavaScript. De core functionaliteit is:
+                            Een habit maken completen voor de dag. Streaks opbouwen en je dagelijkse gewoontes
+                            verbeteren! Verdere functionaliteit bestaat uit: Habits verwijderen, Habits renamen en
+                            statistieken bekijken.
                         </p>
                         <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
                         </div>
                     </div>
                 </article>
@@ -120,21 +129,25 @@
                 <article class="project-card">
                     <div class="project-image">
                         <div class="project-thumbnail">
-                            <div class="placeholder-image">Project 2</div>
+                            <img class="placeholder-image" src="img/notes-app.png">
                         </div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                <a href="https://findiepman.github.io/Notes-app/index.html" class="project-link"
+                                    target="_blank" rel="noopener">
                                     <span>View Live</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                         <polyline points="15 3 21 3 21 9"></polyline>
                                         <line x1="10" y1="14" x2="21" y2="3"></line>
                                     </svg>
                                 </a>
-                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                <a href="https://github.com/Findiepman/Notes-app" class="project-link" target="_blank"
+                                    rel="noopener">
                                     <span>Source Code</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
                                         <polyline points="16 18 22 12 16 6"></polyline>
                                         <polyline points="8 6 2 12 8 18"></polyline>
                                     </svg>
@@ -143,15 +156,17 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Task Management App</h3>
+                        <h3 class="project-title">Notes App</h3>
                         <p class="project-description">
-                            Productiviteits-app voor teams met real-time updates, 
-                            drag-and-drop functionaliteit en collaboratieve features.
+                            Een app waarin je notes kan bewaren en schrijven. Maak een nieuwe note aan en begin gelijk
+                            met schrijven. je kan notes openen door op de note in de lijst te klikken die je wilt
+                            openen. Dan kan je de titel en content aanpassen naar wat jij wilt. Notes kunnen verwijderd
+                            worden met ctrl + click.
                         </p>
                         <div class="project-tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">Tailwind</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
                         </div>
                     </div>
                 </article>
@@ -160,21 +175,25 @@
                 <article class="project-card">
                     <div class="project-image">
                         <div class="project-thumbnail">
-                            <div class="placeholder-image">Project 3</div>
+                            <img class="placeholder-image" src="img/kivo-roadmap.png">
                         </div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                <a href="https://findiepman.github.io/Kivo-Roadmap/index.html" class="project-link"
+                                    target="_blank" rel="noopener">
                                     <span>View Live</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                         <polyline points="15 3 21 3 21 9"></polyline>
                                         <line x1="10" y1="14" x2="21" y2="3"></line>
                                     </svg>
                                 </a>
-                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                <a href="https://github.com/Findiepman/Kivo-Roadmap" class="project-link"
+                                    target="_blank" rel="noopener">
                                     <span>Source Code</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
                                         <polyline points="16 18 22 12 16 6"></polyline>
                                         <polyline points="8 6 2 12 8 18"></polyline>
                                     </svg>
@@ -183,15 +202,17 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Portfolio Website</h3>
+                        <h3 class="project-title">Kivo Roadmap</h3>
                         <p class="project-description">
-                            Minimalistisch portfolio met focus op performance en toegankelijkheid.
-                            Gebouwd met vanilla JavaScript en moderne CSS.
+                            Een website waarin je roadmaps kan maken. Dit project heb ik eigenlijk gemaakt omdat huidige
+                            populaire roadmapping websites veel te ingewikkeld zijn. De core functionaliteit is: Een
+                            nieuwe roadmap aanmaken. Deze openen door erop te klikken. Tasks aanmaken en deze van to-do
+                            naar doing naar done zetten! Zo simpel is het
                         </p>
                         <div class="project-tags">
+                            <span class="tag">JavaScript</span>
                             <span class="tag">HTML5</span>
                             <span class="tag">CSS3</span>
-                            <span class="tag">JavaScript</span>
                         </div>
                     </div>
                 </article>
@@ -206,7 +227,8 @@
                             <div class="project-links">
                                 <a href="#" class="project-link" target="_blank" rel="noopener">
                                     <span>View Live</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                         <polyline points="15 3 21 3 21 9"></polyline>
                                         <line x1="10" y1="14" x2="21" y2="3"></line>
@@ -214,7 +236,8 @@
                                 </a>
                                 <a href="#" class="project-link" target="_blank" rel="noopener">
                                     <span>Source Code</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
                                         <polyline points="16 18 22 12 16 6"></polyline>
                                         <polyline points="8 6 2 12 8 18"></polyline>
                                     </svg>
@@ -246,18 +269,20 @@
                 <h2 class="section-title">Neem Contact Op</h2>
                 <p class="section-subtitle">Laten we samenwerken aan jouw volgende project</p>
             </div>
-            
+
             <div class="contact-content">
                 <div class="contact-info">
                     <p class="contact-text">
-                        Ik sta altijd open voor nieuwe projecten en samenwerkingen. 
+                        Ik sta altijd open voor nieuwe projecten en samenwerkingen.
                         Stuur me een bericht en ik neem zo snel mogelijk contact met je op!
                     </p>
-                    
+
                     <div class="contact-links">
                         <a href="mailto:jouw.email@example.com" class="contact-link">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                             <div class="contact-link-content">
@@ -265,10 +290,14 @@
                                 <span class="contact-link-value">jouw.email@example.com</span>
                             </div>
                         </a>
-                        
-                        <a href="https://linkedin.com/in/jouwprofiel" class="contact-link" target="_blank" rel="noopener">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+
+                        <a href="https://linkedin.com/in/jouwprofiel" class="contact-link" target="_blank"
+                            rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
                                 <rect x="2" y="9" width="4" height="12"></rect>
                                 <circle cx="4" cy="4" r="2"></circle>
                             </svg>
@@ -277,10 +306,14 @@
                                 <span class="contact-link-value">linkedin.com/in/jouwprofiel</span>
                             </div>
                         </a>
-                        
-                        <a href="https://github.com/jouwgebruikersnaam" class="contact-link" target="_blank" rel="noopener">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+
+                        <a href="https://github.com/jouwgebruikersnaam" class="contact-link" target="_blank"
+                            rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
                             </svg>
                             <div class="contact-link-content">
                                 <span class="contact-link-label">GitHub</span>
@@ -289,7 +322,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Optional: Contact form placeholder -->
                 <!-- TODO: Add JavaScript for form validation and submission -->
                 <div class="contact-form-container">
@@ -298,17 +331,18 @@
                             <label for="name" class="form-label">Naam</label>
                             <input type="text" id="name" name="name" class="form-input" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" id="email" name="email" class="form-input" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message" class="form-label">Bericht</label>
-                            <textarea id="message" name="message" class="form-input form-textarea" rows="5" required></textarea>
+                            <textarea id="message" name="message" class="form-input form-textarea" rows="5"
+                                required></textarea>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary btn-full">Verstuur Bericht</button>
                     </form>
                 </div>
@@ -385,4 +419,5 @@
     ============================================
     -->
 </body>
+
 </html>
