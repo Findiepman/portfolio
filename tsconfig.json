@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    // Uitvoer instellingen
+    "target": "ES2020",                  // moderne JS output voor browsers
+    "module": "ESNext",                  // ES modules
+    "rootDir": "./src",                  // waar je TS-bestanden staan
+    "outDir": "./dist",                  // waar de gecompileerde JS komt
+    "sourceMap": true,                   // handig voor debugging
+    "declaration": true,                 // genereert .d.ts (optioneel)
+    "declarationMap": true,              // map voor .d.ts
+    "strict": true,                      // strikte typechecks
+    "noUncheckedIndexedAccess": true,    
+    "exactOptionalPropertyTypes": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,             // import compatibel met CommonJS
+
+    // React opties (optioneel, als je React gebruikt)
+    "jsx": "react-jsx",
+
+    // Browser relevante libs
+    "lib": ["DOM", "ES2020"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
