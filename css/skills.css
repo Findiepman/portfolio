@@ -1,0 +1,72 @@
+/* ─────────────────────────────────────────────────────────
+   skills.css — skill groups (light purple surface)
+   ───────────────────────────────────────────────────────── */
+
+#skills {
+  background: var(--purple-light);
+}
+
+#skills .section-eyebrow {
+  color: var(--purple-deep);
+}
+
+#skills .section-eyebrow::before {
+  background: var(--purple-deep);
+}
+
+#skills .section-sub {
+  color: var(--ink);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.skill-group {
+  border: 2px solid var(--purple-deep);
+  box-shadow: var(--px-shadow) var(--purple-deep);
+  padding: 1.75rem;
+  background: var(--bg);
+  transition: border-color 150ms, box-shadow 150ms;
+}
+
+.skill-group:hover {
+  border-color: var(--purple-vivid);
+  box-shadow: var(--px-shadow) var(--purple-vivid);
+}
+
+.skill-group-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--purple-deep);
+}
+
+.skill-group-desc {
+  margin-top: 0.375rem;
+  margin-bottom: 1.125rem;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+.skill-list .tag {
+  border-color: var(--purple-muted);
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.skill-list .tag {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 760px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

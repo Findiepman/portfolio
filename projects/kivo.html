@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kivo — Fin Diepman</title>
+  <meta name="description" content="Case study of the Kivo project by Fin Diepman." />
+  <link rel="icon" href="../js.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+  <link rel="stylesheet" href="../css/project-page.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────── -->
+  <header id="site-header">
+    <nav class="container nav-inner">
+      <a href="../index.html" class="nav-logo pixel">findiepman<span class="accent">.dev</span></a>
+
+      <ul class="nav-links">
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="../index.html#skills"   class="nav-link">Skills</a></li>
+        <li><a href="../index.html#about"    class="nav-link">About</a></li>
+        <li><a href="../index.html#contact"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="mailto:fin@findiepman.dev" class="btn btn-solid nav-cta">Email me</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="../index.html#projects" class="mobile-link">Projects</a>
+      <a href="../index.html#skills"   class="mobile-link">Skills</a>
+      <a href="../index.html#about"    class="mobile-link">About</a>
+      <a href="../index.html#contact"  class="mobile-link">Contact</a>
+      <a href="mailto:fin@findiepman.dev" class="mobile-link accent">Email me</a>
+    </div>
+  </header>
+
+  <!--
+    HOW TO FILL IN THIS PAGE:
+    1. Write the tagline under the title: one sentence saying what the project is.
+    2. Fill the three .todo sections: "what it is", "how i built it", "what i learned".
+    3. In the facts card: set year/status, tech tags, and swap the GitHub link for the real repo URL.
+       Add a live-demo link there too if the project is hosted somewhere.
+    4. Gallery: drop extra screenshots in /img and copy the <figure> block for each one.
+  -->
+
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section class="proj-hero">
+    <div class="container">
+      <a href="../index.html#projects" class="proj-back">&larr; all projects</a>
+      <p class="section-eyebrow pixel">project</p>
+      <h1 class="proj-title">Kivo</h1>
+      <p class="proj-tagline todo">[ One sentence: what is this project and who is it for? ]</p>
+      <div class="proj-actions">
+        <a href="https://github.com/FinDiepman" target="_blank" rel="noopener" class="btn btn-solid">View code &#8599;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <figure class="proj-shot">
+      <img src="../img/kivo-roadmap.png" alt="Screenshot of Kivo" />
+    </figure>
+  </div>
+
+  <!-- ── Body ─────────────────────────────────────────── -->
+  <section class="proj-body">
+    <div class="container proj-body-inner">
+
+      <div class="proj-content">
+        <div class="proj-section">
+          <h2 class="proj-section-title">what it is</h2>
+          <p class="todo">[ Describe the project: what does it do, why did you build it? 2&ndash;4 sentences. ]</p>
+        </div>
+
+        <div class="proj-section">
+          <h2 class="proj-section-title">how i built it</h2>
+          <p class="todo">[ The interesting part: what tech did you use and what problems did you solve? Feel free to use a list: ]</p>
+          <ul>
+            <li class="todo">[ e.g. how you store the data ]</li>
+            <li class="todo">[ e.g. a tricky feature and how you solved it ]</li>
+          </ul>
+        </div>
+
+        <div class="proj-section">
+          <h2 class="proj-section-title">what i learned</h2>
+          <p class="todo">[ 1&ndash;3 honest takeaways. This is the part people actually like reading. ]</p>
+        </div>
+      </div>
+
+      <aside class="proj-facts">
+        <div>
+          <p class="fact-label">year</p>
+          <p class="fact-value todo">[ 2026 ]</p>
+        </div>
+        <div>
+          <p class="fact-label">status</p>
+          <p class="fact-value todo">[ e.g. finished / still improving it ]</p>
+        </div>
+        <div>
+          <p class="fact-label">built with</p>
+          <div class="fact-tags">
+            <span class="tag pixel">[ tech ]</span>
+            <span class="tag pixel">[ tech ]</span>
+          </div>
+        </div>
+        <div>
+          <p class="fact-label">links</p>
+          <div class="fact-links">
+            <a href="https://github.com/FinDiepman" target="_blank" rel="noopener">GitHub repo &#8599;</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ── Gallery ──────────────────────────────────────── -->
+  <section class="proj-gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow pixel">screenshots</p>
+        <h2 class="section-title">A closer look</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="../img/kivo-roadmap.png" alt="Kivo screenshot" loading="lazy" />
+          <figcaption class="todo">[ Caption: what are we looking at? ]</figcaption>
+        </figure>
+        <div class="gallery-empty">
+          <p>drop more screenshots in /img<br />and copy the figure block</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Prev / next ──────────────────────────────────── -->
+  <div class="container proj-footer-nav">
+    <a href="habit-tracker.html" class="btn btn-outline">&larr; Prev: Habit Tracker</a>
+    <a href="notes-app.html" class="btn btn-outline">Next: Notes App &rarr;</a>
+  </div>
+
+  <!-- ── Footer ───────────────────────────────────────── -->
+  <footer class="proj-footer">
+    <div class="container">
+      <div class="contact-bottom">
+        <span class="footer-note">&copy; <span id="year"></span> Fin Diepman &middot; Built by hand with HTML, CSS &amp; TypeScript</span>
+        <div class="social-links">
+          <a href="https://github.com/FinDiepman" target="_blank" rel="noopener" class="social-link">GitHub</a>
+          <a href="mailto:fin@findiepman.dev" class="social-link">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../dist/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+/* ─────────────────────────────────────────────────────────
+   project-page.css — layout for the per-project detail pages
+   (used by everything in /projects, not by index.html)
+   ───────────────────────────────────────────────────────── */
+
+/* ── Hero (deep purple, with a pixel-strata bottom edge) ── */
+.proj-hero {
+  background: var(--purple-deep);
+  padding-top: calc(var(--nav-h) + clamp(2.5rem, 7vw, 4.5rem));
+  padding-bottom: clamp(2rem, 5vw, 3rem);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  position: relative;
+}
+
+.proj-hero::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background-image:
+    repeating-linear-gradient(90deg, #914AF7 0 12px, transparent 12px 24px),
+    repeating-linear-gradient(90deg, #B990EE 0 12px, transparent 12px 24px),
+    repeating-linear-gradient(90deg, #E9DFF8 0 12px, transparent 12px 24px);
+  background-position: 0 0, 12px 8px, 0 16px;
+  background-size: 24px 8px;
+  background-repeat: repeat-x;
+}
+
+.proj-hero :focus-visible {
+  outline-color: #fff;
+}
+
+.proj-back {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--purple-light);
+  margin-bottom: 1.75rem;
+}
+
+.proj-back:hover {
+  color: #fff;
+}
+
+.proj-hero .section-eyebrow {
+  color: var(--purple-light);
+}
+
+.proj-hero .section-eyebrow::before {
+  background: var(--purple-light);
+}
+
+.proj-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.proj-tagline {
+  margin-top: 1rem;
+  max-width: 52ch;
+  color: var(--purple-pale);
+  font-size: 1.125rem;
+}
+
+.proj-hero .todo {
+  color: var(--purple-light);
+  border-bottom-color: var(--purple-muted);
+}
+
+.proj-actions {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.proj-hero .btn-solid {
+  background: #fff;
+  color: var(--purple-deep);
+  border-color: #fff;
+  box-shadow: var(--px-shadow) var(--purple-vivid);
+}
+
+/* ── Main screenshot ── */
+.proj-shot {
+  border: 2px solid var(--purple-light);
+  box-shadow: 6px 6px 0 var(--purple-light);
+  background: var(--bg-tint);
+}
+
+.proj-shot img {
+  width: 100%;
+}
+
+/* ── Body: content + facts aside ── */
+.proj-body {
+  padding-block: clamp(3rem, 7vw, 5rem);
+}
+
+.proj-body-inner {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(2rem, 6vw, 4.5rem);
+  align-items: start;
+}
+
+.proj-section {
+  margin-bottom: 2.5rem;
+}
+
+.proj-section:last-child {
+  margin-bottom: 0;
+}
+
+.proj-section-title {
+  font-family: var(--font-pixel);
+  font-size: 0.8125rem;
+  color: var(--purple-vivid);
+  margin-bottom: 0.75rem;
+  text-transform: lowercase;
+}
+
+.proj-section-title::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--purple-vivid);
+  margin-right: 0.625rem;
+}
+
+.proj-section p {
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin-bottom: 0.875rem;
+}
+
+.proj-section ul {
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+.proj-section ul li {
+  padding-block: 0.25rem;
+}
+
+.proj-section ul li::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--purple-light);
+  margin-right: 0.625rem;
+}
+
+/* Facts card (sticky on desktop) */
+.proj-facts {
+  position: sticky;
+  top: calc(var(--nav-h) + 1.5rem);
+  background: var(--bg);
+  border: 2px solid var(--purple-light);
+  box-shadow: var(--px-shadow) var(--purple-light);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+}
+
+.fact-label {
+  font-family: var(--font-pixel);
+  font-size: 0.6875rem;
+  color: var(--purple-vivid);
+  margin-bottom: 0.375rem;
+  text-transform: lowercase;
+}
+
+.fact-value {
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+.fact-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.fact-tags .tag {
+  font-size: 0.6875rem;
+}
+
+.fact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fact-links a {
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.fact-links a:hover {
+  color: var(--purple-deep);
+}
+
+/* ── Gallery (light purple surface) ── */
+.proj-gallery {
+  background: var(--purple-light);
+  padding-block: clamp(3rem, 7vw, 5rem);
+}
+
+.proj-gallery .section-eyebrow {
+  color: var(--purple-deep);
+}
+
+.proj-gallery .section-eyebrow::before {
+  background: var(--purple-deep);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.gallery-item {
+  border: 2px solid var(--purple-deep);
+  background: var(--bg);
+  box-shadow: var(--px-shadow) var(--purple-deep);
+}
+
+.gallery-item img {
+  width: 100%;
+}
+
+.gallery-item figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  border-top: 2px solid var(--purple-light);
+}
+
+.gallery-empty {
+  border: 2px dashed var(--purple-deep);
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.gallery-empty p {
+  font-family: var(--font-pixel);
+  font-size: 0.8125rem;
+  color: var(--purple-deep);
+  text-transform: lowercase;
+}
+
+/* ── Dark footer band (matches the homepage contact section) ── */
+.proj-footer {
+  background: var(--purple-deep);
+  padding-bottom: 2rem;
+}
+
+.proj-footer .contact-bottom {
+  margin-top: 0;
+}
+
+.proj-footer :focus-visible {
+  outline-color: #fff;
+}
+
+/* ── Bottom nav between projects ── */
+.proj-footer-nav {
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 860px) {
+  .proj-body-inner {
+    grid-template-columns: 1fr;
+  }
+  .proj-facts {
+    position: static;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

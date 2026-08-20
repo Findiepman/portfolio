@@ -1,0 +1,83 @@
+/* ─────────────────────────────────────────────────────────
+   contact.css — footer / contact (deep purple surface)
+   ───────────────────────────────────────────────────────── */
+
+#contact {
+  background: var(--purple-deep);
+  padding-bottom: 2rem;
+}
+
+#contact :focus-visible {
+  outline-color: #fff;
+}
+
+.contact-top {
+  text-align: center;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+#contact .section-eyebrow {
+  color: var(--purple-light);
+}
+
+#contact .section-eyebrow::before {
+  background: var(--purple-light);
+}
+
+.contact-heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5.5vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: #fff;
+}
+
+.contact-sub {
+  margin-top: 1rem;
+  color: var(--purple-pale);
+}
+
+.contact-email-btn {
+  margin-top: 2rem;
+  font-size: 1.0625rem;
+}
+
+#contact .btn-solid {
+  background: #fff;
+  color: var(--purple-deep);
+  border-color: #fff;
+  box-shadow: var(--px-shadow) var(--purple-vivid);
+}
+
+.contact-bottom {
+  margin-top: clamp(4rem, 9vw, 6rem);
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-note {
+  color: var(--purple-pale);
+  font-size: 0.8125rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.social-link {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--purple-pale);
+}
+
+.social-link:hover {
+  color: #fff;
+}

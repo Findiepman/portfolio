@@ -1,0 +1,120 @@
+/* ─────────────────────────────────────────────────────────
+   nav.css — fixed header (deep purple), mobile menu
+   ───────────────────────────────────────────────────────── */
+
+#site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  background: rgba(94, 30, 176, 0.94);   /* --purple-deep */
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid transparent;
+  transition: border-color 200ms var(--ease-out);
+}
+
+#site-header.scrolled {
+  border-bottom-color: var(--purple-vivid);
+}
+
+.nav-inner {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.nav-logo {
+  color: #fff;
+  font-size: 0.9375rem;
+}
+
+.nav-logo .accent {
+  color: var(--purple-light);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--purple-pale);
+  transition: color 150ms;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff;
+}
+
+#site-header :focus-visible {
+  outline-color: #fff;
+}
+
+.nav-cta {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  background: #fff;
+  color: var(--purple-deep);
+  border-color: #fff;
+  box-shadow: var(--px-shadow) var(--purple-vivid);
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 3px;
+  background: #fff;
+  transition: transform 200ms var(--ease-out), opacity 200ms;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ── Mobile menu ── */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--purple-deep);
+  border-bottom: 2px solid var(--purple-vivid);
+  padding: 0.5rem 1.5rem 1.25rem;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-link {
+  padding: 0.75rem 0;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-link.accent {
+  color: var(--purple-light);
+}
+
+.mobile-link:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 760px) {
+  .nav-links,
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+}

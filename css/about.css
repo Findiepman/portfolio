@@ -1,0 +1,96 @@
+/* ─────────────────────────────────────────────────────────
+   about.css — story + aside cards
+   ───────────────────────────────────────────────────────── */
+
+#about {
+  background: var(--purple-muted);
+}
+
+#about .section-eyebrow {
+  color: #fff;
+}
+
+#about .section-eyebrow::before {
+  background: #fff;
+}
+
+#about .section-title {
+  color: #fff;
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: clamp(2rem, 6vw, 4.5rem);
+  align-items: start;
+}
+
+.about-text .section-header {
+  margin-bottom: 2rem;
+}
+
+.about-para {
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+  max-width: 58ch;
+}
+
+.about-para strong {
+  background: #fff;
+  color: var(--purple-deep);
+  padding: 0 4px;
+}
+
+.about-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.aside-card {
+  background: var(--bg);
+  border: 2px solid var(--purple-deep);
+  box-shadow: var(--px-shadow) var(--purple-deep);
+  padding: 1.5rem;
+}
+
+.aside-label {
+  color: var(--purple-vivid);
+  font-size: 0.75rem;
+  margin-bottom: 0.625rem;
+}
+
+.aside-big {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3.25rem;
+  line-height: 1;
+  color: var(--purple-deep);
+}
+
+.aside-note {
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+  margin-top: 0.375rem;
+}
+
+.aside-list li {
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  padding-block: 0.25rem;
+}
+
+.aside-list li::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--purple-light);
+  margin-right: 0.625rem;
+}
+
+@media (max-width: 860px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+  }
+}

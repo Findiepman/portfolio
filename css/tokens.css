@@ -1,0 +1,35 @@
+/* ─────────────────────────────────────────────────────────
+   tokens.css — design tokens
+   Palette: white base + Fin's four purples
+   ───────────────────────────────────────────────────────── */
+
+:root {
+  /* Color */
+  --bg:            #FFFFFF;
+  --bg-tint:       #F8F4FE;   /* faint lavender wash for alternating sections */
+  --ink:           #211433;   /* near-black purple — primary text */
+  --ink-soft:      #5C4A75;   /* secondary text */
+  --purple-deep:   #5E1EB0;   /* headings, solid buttons */
+  --purple-vivid:  #914AF7;   /* links, hovers, highlights */
+  --purple-light:  #B990EE;   /* borders, tags, pixel strata */
+  --purple-muted:  #997EBD;   /* quiet details, about-section surface */
+  --purple-pale:   #E4D6FA;   /* readable body text on deep purple */
+  --border:        #E9DFF8;
+
+  /* Type */
+  --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  --font-body:    "Schibsted Grotesk", "Segoe UI", sans-serif;
+  --font-pixel:   "Silkscreen", monospace;
+
+  /* Layout */
+  --container:  1120px;
+  --section-y:  clamp(4rem, 10vw, 7rem);
+  --nav-h:      64px;
+
+  /* Pixel motif */
+  --px-size: clamp(20px, 3.5vw, 32px);   /* one block of the hero monogram */
+  --px-shadow: 4px 4px 0;                /* hard offset shadow for buttons/cards */
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}

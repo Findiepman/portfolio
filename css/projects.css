@@ -1,0 +1,124 @@
+/* ─────────────────────────────────────────────────────────
+   projects.css — project grid + cards
+   ───────────────────────────────────────────────────────── */
+
+#projects {
+  background: var(--bg);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.project-card {
+  background: var(--bg);
+  border: 2px solid var(--purple-light);
+  box-shadow: var(--px-shadow) var(--purple-light);
+  display: flex;
+  flex-direction: column;
+  transition: transform 150ms var(--ease-out), box-shadow 150ms var(--ease-out),
+              border-color 150ms;
+}
+
+.project-card:hover {
+  transform: translate(-2px, -2px);
+  border-color: var(--purple-vivid);
+  box-shadow: 6px 6px 0 var(--purple-vivid);
+}
+
+.card-media {
+  display: block;
+  border-bottom: 2px solid var(--purple-light);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-tint);
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  flex: 1;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: var(--purple-deep);
+}
+
+.card-desc {
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.card-tags .tag {
+  font-size: 0.6875rem;
+}
+
+.card-link {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--purple-vivid);
+  align-self: flex-start;
+}
+
+.card-link:hover {
+  color: var(--purple-deep);
+}
+
+/* ── Empty slot ── */
+.card-empty {
+  border-color: var(--purple-light);
+  border-style: dashed;
+  box-shadow: none;
+  background: transparent;
+  min-height: 260px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-empty:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.card-empty-inner {
+  text-align: center;
+  padding: 2rem;
+}
+
+.card-empty-label {
+  color: var(--purple-muted);
+  font-size: 0.9375rem;
+}
+
+.card-empty-sub {
+  margin-top: 0.625rem;
+  color: var(--purple-muted);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 760px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

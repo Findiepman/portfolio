@@ -1,0 +1,109 @@
+/* ─────────────────────────────────────────────────────────
+   hero.css — deep purple hero + pixel "F" monogram
+   (monogram blocks: white / vivid / light / muted on the
+    deep purple ground — all five colors in one place)
+   ───────────────────────────────────────────────────────── */
+
+#hero {
+  background: var(--purple-deep);
+  padding-top: calc(var(--nav-h) + clamp(3rem, 9vw, 6rem));
+  padding-bottom: clamp(3rem, 8vw, 5.5rem);
+}
+
+#hero :focus-visible {
+  outline-color: #fff;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.hero-eyebrow {
+  color: var(--purple-light);
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.375rem, 6.5vw, 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fff;
+  max-width: 15ch;
+}
+
+.hero-title .accent {
+  color: var(--purple-light);
+}
+
+.hero-sub {
+  margin-top: 1.5rem;
+  max-width: 46ch;
+  color: var(--purple-pale);
+  font-size: 1.125rem;
+}
+
+.hero-ctas {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#hero .btn-solid {
+  background: #fff;
+  color: var(--purple-deep);
+  border-color: #fff;
+  box-shadow: var(--px-shadow) var(--purple-vivid);
+}
+
+#hero .btn-outline {
+  background: transparent;
+  color: #fff;
+  border-color: var(--purple-light);
+  box-shadow: var(--px-shadow) var(--purple-vivid);
+}
+
+/* ── Pixel monogram ── */
+.pixel-f {
+  display: grid;
+  grid-template-columns: repeat(6, var(--px-size));
+  grid-auto-rows: var(--px-size);
+  gap: 3px;
+}
+
+.px {
+  opacity: 0;
+  animation: pxIn 350ms var(--ease-out) forwards;
+  animation-delay: calc(120ms + var(--i) * 45ms);
+}
+
+.px.c1 { background: #fff; }
+.px.c2 { background: var(--purple-vivid); }
+.px.c3 { background: var(--purple-light); }
+.px.c4 { background: var(--purple-muted); }
+
+.px:hover {
+  filter: brightness(1.15);
+}
+
+@keyframes pxIn {
+  from { opacity: 0; transform: scale(0.4); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 760px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .hero-mark {
+    order: -1;
+  }
+  .pixel-f {
+    --px-size: 16px;
+  }
+}
