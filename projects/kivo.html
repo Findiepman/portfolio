@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kivo — Fin Diepman</title>
+  <title>Kivo Roadmap</title>
   <meta name="description" content="Case study of the Kivo project by Fin Diepman." />
   <link rel="icon" href="../icon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,17 +59,17 @@
     <div class="container">
       <a href="../index.html#projects" class="proj-back">&larr; all projects</a>
       <p class="section-eyebrow pixel">project</p>
-      <h1 class="proj-title">Kivo</h1>
-      <p class="proj-tagline todo">[ One sentence: what is this project and who is it for? ]</p>
+      <h1 class="proj-title">Kivo Roadmap</h1>
+      <p class="proj-tagline todo">Kivo is a fully functional replacement for other roadmap software. Easier to use and set up than other roadmapping tools.</p>
       <div class="proj-actions">
-        <a href="https://github.com/FinDiepman" target="_blank" rel="noopener" class="btn btn-solid">View code &#8599;</a>
+        <a href="https://github.com/FinDiepman" target="_blank" rel="noopener" class="btn btn-solid">View code</a>
       </div>
     </div>
   </section>
 
   <div class="container">
     <figure class="proj-shot">
-      <img src="../img/kivo-roadmap.png" alt="Screenshot of Kivo" />
+      <img src="../img/kivo3.png" alt="Screenshot of Kivo" />
     </figure>
   </div>
 
@@ -80,44 +80,48 @@
       <div class="proj-content">
         <div class="proj-section">
           <h2 class="proj-section-title">what it is</h2>
-          <p class="todo">[ Describe the project: what does it do, why did you build it? 2&ndash;4 sentences. ]</p>
+          <p class="todo">I built Kivo because i got sick and tired of websites like Trello just not working out of the box. It was originally a frontend only website but when i got my hands on my own server i decided to make a backend. I also added accounts, sharing and more stuff!</p>
         </div>
 
         <div class="proj-section">
           <h2 class="proj-section-title">how i built it</h2>
-          <p class="todo">[ The interesting part: what tech did you use and what problems did you solve? Feel free to use a list: ]</p>
+          <p class="todo">I used vanilla Javascript and Node JS + Express to build this. </p>
           <ul>
-            <li class="todo">[ e.g. how you store the data ]</li>
-            <li class="todo">[ e.g. a tricky feature and how you solved it ]</li>
+            <li class="todo">Data is stored in an SQLite database using better-sql3</li>
+            <li class="todo">Admin accounts can create users and invite them to roadmaps</li>
+            <li class="todo">Auth: JWT and passwords are hashed with bcryptjs</li>
+            <li class="todo">Deployment runs via docker compose and cloudflared</li>
           </ul>
         </div>
 
         <div class="proj-section">
           <h2 class="proj-section-title">what i learned</h2>
-          <p class="todo">[ 1&ndash;3 honest takeaways. This is the part people actually like reading. ]</p>
+          <p class="todo">I learned how to work with backends, account creation, authentication and much more backend related stuff! I also really enjoyed building this because its actually useful. </p>
         </div>
       </div>
 
       <aside class="proj-facts">
         <div>
           <p class="fact-label">year</p>
-          <p class="fact-value todo">[ 2026 ]</p>
+          <p class="fact-value todo"> 2026 </p>
         </div>
         <div>
           <p class="fact-label">status</p>
-          <p class="fact-value todo">[ e.g. finished / still improving it ]</p>
+          <p class="fact-value todo">Finished but always taking suggestions.</p>
         </div>
         <div>
           <p class="fact-label">built with</p>
           <div class="fact-tags">
-            <span class="tag pixel">[ tech ]</span>
-            <span class="tag pixel">[ tech ]</span>
+            <span class="tag pixel">Javascript</span>
+            <span class="tag pixel">Node JS</span>
+            <span class="tag pixel">SQLite</span>
+            <span class="tag pixel">Docker</span>
           </div>
         </div>
         <div>
           <p class="fact-label">links</p>
           <div class="fact-links">
-            <a href="https://github.com/FinDiepman" target="_blank" rel="noopener">GitHub repo &#8599;</a>
+            <a href="https://github.com/FinDiepman" target="_blank" rel="noopener">GitHub repo</a>
           </div>
         </div>
       </aside>
@@ -134,19 +138,36 @@
       </div>
       <div class="gallery-grid">
         <figure class="gallery-item">
-          <img src="../img/kivo-roadmap.png" alt="Kivo screenshot" loading="lazy" />
-          <figcaption class="todo">[ Caption: what are we looking at? ]</figcaption>
+          <img src="../img/kivo1.png" alt="Kivo screenshot" loading="lazy" />
+          <figcaption class="todo">Here you can view the login screen</figcaption>
         </figure>
-        <div class="gallery-empty">
-          <p>drop more screenshots in /img<br />and copy the figure block</p>
-        </div>
+        <figure class="gallery-item">
+          <img src="../img/kivo2.png" alt="Kivo screenshot" loading="lazy" />
+          <figcaption class="todo">This is what a brand new non-admin account sees when logging in.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/kivo3.png" alt="Kivo screenshot" loading="lazy" />
+          <figcaption class="todo">This is what creating a new task looks like.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/kivo4.png" alt="Kivo screenshot" loading="lazy" />
+          <figcaption class="todo">This is a showcase of the 3 states a task can have.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/kivo5.png" alt="Kivo screenshot" loading="lazy" />
+          <figcaption class="todo">This is the view a non-admin account has when they have a roadmap shared</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="../img/kivo6.png" alt="Kivo screenshot" loading="lazy" />
+          <figcaption class="todo">This is what the admin panel looks like.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
   <!-- ── Prev / next ──────────────────────────────────── -->
   <div class="container proj-footer-nav">
-    <a href="habit-tracker.html" class="btn btn-outline">&larr; Prev: Habit Tracker</a>
+    <a href="../index.html#projects" class="btn btn-outline">&larr; All projects</a>
     <a href="notes-app.html" class="btn btn-outline">Next: Notes App &rarr;</a>
   </div>
 
