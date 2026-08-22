@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minecraft Development &middot; Fin Diepman</title>
+  <meta name="description" content="Minecraft plugins and skripts by Fin Diepman." />
+  <link rel="icon" href="icon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/project-page.css" />
+  <link rel="stylesheet" href="css/minecraft.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────── -->
+  <header id="site-header">
+    <nav class="container nav-inner">
+      <a href="index.html" class="nav-logo pixel">findiepman<span class="accent">.dev</span></a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#projects"     class="nav-link">Projects</a></li>
+        <li><a href="minecraft.html"          class="nav-link active">Minecraft</a></li>
+        <li><a href="index.html#skills"       class="nav-link">Skills</a></li>
+        <li><a href="index.html#about"        class="nav-link">About</a></li>
+        <li><a href="index.html#commissions"  class="nav-link">Commissions</a></li>
+        <li><a href="index.html#contact"      class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="mailto:fin@findiepman.dev" class="btn btn-solid nav-cta">Email me</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html#projects"     class="mobile-link">Projects</a>
+      <a href="minecraft.html"          class="mobile-link">Minecraft</a>
+      <a href="index.html#skills"       class="mobile-link">Skills</a>
+      <a href="index.html#about"        class="mobile-link">About</a>
+      <a href="index.html#commissions"  class="mobile-link">Commissions</a>
+      <a href="index.html#contact"      class="mobile-link">Contact</a>
+      <a href="mailto:fin@findiepman.dev" class="mobile-link accent">Email me</a>
+    </div>
+  </header>
+
+  <!--
+    HOW TO FILL IN THIS PAGE:
+    1. About: write a couple of paragraphs about yourself as a Minecraft dev — replace the .todo text.
+    2. Facts card: fill in the test server status/IP once it exists.
+    3. Breakdown — two block styles, pick per plugin:
+       - Short block: just a name + a paragraph + tags. Good for simpler plugins/skripts.
+       - Full block (add class "mc-block--full" on the .skill-group): same, plus a .mc-modules
+         grid underneath for plugins with several systems worth explaining separately
+         (like PrimalMinesCore's 13 modules) — one .mc-module per system, name + what it does.
+       Give each block an id (plugin-1, plugin-2, ...) so the homepage teaser cards can link straight to it.
+       To add another: duplicate a block, bump the id, and add a matching teaser card on index.html.
+  -->
+
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section class="proj-hero">
+    <div class="container">
+      <a href="index.html#minecraft" class="proj-back">&larr; back to findiepman.dev</a>
+      <p class="section-eyebrow pixel">minecraft</p>
+      <h1 class="proj-title">Minecraft Development</h1>
+      <p class="proj-tagline">If you visited this page you are probably interested in my minecraft work! Here you can view my best plugins and skripts!</p>
+    </div>
+  </section>
+
+  <!-- ── About ────────────────────────────────────────── -->
+  <section class="proj-body">
+    <div class="container proj-body-inner">
+
+      <div class="proj-content">
+        <div class="proj-section">
+          <h2 class="proj-section-title">about</h2>
+          <p class="todo">I started developing with skript when i was 13. Which is also when i had my first minecraft server. It didn't get big or anything but i made some money. Which was enough to kickstart my server owner journey!</p>
+          <p class="todo">Currently i'm not a server owner anymore. Nor will i be for some time. I mostly spend my time playing video games or just working for other servers.</p>
+        </div>
+      </div>
+
+      <aside class="proj-facts">
+        <div>
+          <p class="fact-label">stack</p>
+          <div class="fact-tags">
+            <span class="tag pixel">Java</span>
+            <span class="tag pixel">Skript</span>
+            <span class="tag pixel">Skbee</span>
+          </div>
+        </div>
+        <div>
+          <p class="fact-label">Testing Server</p>
+          <p class="fact-value todo">Play.findiepman.dev (Not live right now.)</p>
+        </div>
+        <div>
+          <p class="fact-label">links</p>
+          <div class="fact-links">
+            <a href="https://github.com/FinDiepman" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ── Plugin / skript breakdown ────────────────────── -->
+  <section class="mc-detail">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow pixel">breakdown</p>
+        <h2 class="section-title">What I've built</h2>
+        <p class="section-sub">This is a showcase of my work in minecraft development.</p>
+      </div>
+
+      <div class="mc-grid">
+
+        <div class="skill-group mc-block--full" id="plugin-1">
+          <h3 class="skill-group-title">PrimalMinesCore</h3>
+          <p class="skill-group-desc">This is my prized possession. This specific plugin held my entire minecraft server together! It consists of a TON of modules each having a very important use in my server. In the cards below i explain every module.</p>
+
+          <!--
+            One .mc-module per system. Replace the .todo text with what each one actually does —
+            a sentence or two is fine, this is meant to be scannable, not another wall of text.
+            Add/remove .mc-module blocks freely, the grid reflows on its own.
+          -->
+          <div class="mc-modules">
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Fortune</p>
+              <p class="mc-module-desc">This module handles the most important part of any mining server. The compression. It did this perfectly allowing for high fortune and multipliers amounts and it could keep up with no problems. It also had a custom enchant: Trench. Which made you mine more than one block based on the level of it.</p>
+            </div>
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Levels</p>
+              <p class="mc-module-desc">The name pretty much speaks for itself but this module handles the gaining exp and leveling up. You can get exp multi by prestiging same as fortune. I also wrote a skript kinda like an addon where you can have temporary exp multipliers. </p>
+            </div>
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Skills</p>
+              <p class="mc-module-desc">This part of the module is your average skills plugin. You gain skill xp you level up and get level experience and money. It has 5 base skills: Combat, Mining, Bosses, Experience and taming.</p>
+            </div>
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Pets</p>
+              <p class="mc-module-desc">This is my favorite module. It has over 130 custom pets each with its own abilities and stat boosts. They're kind of like the hypixel skyblock pets in terms of your pet following you around and the way the lore is built.</p>
+            </div>
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Holograms</p>
+              <p class="mc-module-desc">I added this module because i hated the modern hologram plugins (Fancyholograms, decentholograms) It does everything both do but combined. You can have blocks scaling holograms being a billboard etc.</p>
+            </div>
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Crates</p>
+              <p class="mc-module-desc">The crates also got added because modern crates plugins suck. Excellent crates is good but takes years to set up. This one works out of the box. Set up rewards and chances with a ui easily and more.</p>
+            </div>
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Shops</p>
+              <p class="mc-module-desc">The shops module got added because i didn't like using the shopkeepers plugin. The way it works is you have categories where you buy tools and armor and such. Behind the scenes you have a full admin menu where you can easily edit shops to your liking.</p>
+            </div>
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Talisman</p>
+              <p class="mc-module-desc">The talisman module is kinda like the pets module. You get stat boosts from having certain talisman in your bag. You start out with 3 slots and can have a maximum of 9. There are 13 talisman and they give mining, combat and pet xp boosters. </p>
+            </div>
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Mining events</p>
+              <p class="mc-module-desc">The mining event triggers every hour in non-prestige worlds where you have to mine as much of a block as you can in order to get first place. The top 3 get rewarded with keys and money. Each event lasts 15 minutes.</p>
+            </div>
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Autogear</p>
+              <p class="mc-module-desc">Autogear got added because i got tired of having to do custom lore for each piece of gear. It was so annoying and time wasting. So now you open the menu configure the name, color and enchants and voila you have a full armor set(s)! It works with armor swords and pickaxes but also custom items!</p>
+            </div>
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Quests</p>
+              <p class="mc-module-desc">I kind of neglected this module but the idea was weekly quests which need to be configured by you. You could have combat, bosses or mining related quests and you decide what block they'd need to mine and how much of it. This all works but i disabled it because i had no real use for it on my server.</p>
+            </div>
+            <div class="mc-module">
+              <p class="mc-module-name pixel">Gemstones</p>
+              <p class="mc-module-desc">This module is an addon to the fortune module. You mine blocks and have a chance to find a gemstone. These can then be sold to the merchant but some were used in secret trades. Each dimension had its own gemstones but the amount varied. I think there were about 5-9 gemstones in each dimension</p>
+            </div>
+          </div>
+
+          <ul class="skill-list">
+            <li class="tag pixel">Java</li>
+            <li class="tag pixel">Skript</li>
+            <li class="tag pixel">Server: PrimalMines</li>
+          </ul>
+        </div>
+
+        <div class="skill-group" id="plugin-2">
+          <h3 class="skill-group-title">Playershops</h3>
+          <p class="skill-group-desc">The playershops plugin is an easy way to have your players create their own shops. It uses my hologram plugin to display the text above. It also features a transaction log which you can connect to your discord. It has the option to blacklist a world so you dont get your spawn world filled with shops. Players can add stock add items and admins can see every shop and its contents.</p><br>
+          <ul class="skill-list">
+            <li class="tag pixel">Java</li>
+            <li class="tag pixel">Server: FerruhSMP <a href="https://discord.gg/ferruhsmp" target="_blank">Discord</a></li>
+          </ul>
+        </div>
+
+        <div class="skill-group" id="plugin-3">
+          <h3 class="skill-group-title">Claims</h3>
+          <p class="skill-group-desc">This plugin does everything other claim plugins do but better. You can trust untrust, ban unban, promote demote players. It features a settings menu where you can edit everything everyone can do on your claim. You can edit every single member's permission. You can also edit environment settings like creeper explosions, fire spread and more!</p><br>
+          <ul class="skill-list">
+            <li class="tag pixel">Java</li>
+            <li class="tag pixel">Server: FerruhSMP <a href="https://discord.gg/ferruhsmp" target="_blank">Discord</a></li>
+          </ul>
+        </div>
+        <div class="skill-group" id="plugin-4">
+          <h3 class="skill-group-title">Gens</h3>
+          <p class="skill-group-desc">This plugin was built for a gen server it features upgradable generators, a genshop virtual item stacking sell wands and more. You could stack generators shift + right click to instantly upgrade them. Sell your stash using /sell view your stash. It has a bunch of placeholders meaning you can use them to build stuff with them using skript.</p><br>
+          <ul class="skill-list">
+            <li class="tag pixel ">Java</li>
+            <li class="tag pixel ">Skript</li>
+          </ul>
+        </div>
+        <div class="skill-group" id="plugin-5">
+          <h3 class="skill-group-title">Boss Slayers</h3>
+          <p class="skill-group-desc">This skript is one of my favorites. A whole entire slayer system. It uses mythicmobs for the bosses and skript for everything else. You can level up your slayers to get some cool rewards. Drop rare drops from bosses which had entire loot tables. Each boss had its own OP pet you could drop. You could also drop their signature weapon</p><br>
+          <ul class="skill-list">
+            <li class="tag pixel ">Skript</li>
+            <li class="tag pixel ">Mythic Mobs (dependency)</li>
+            <li class="tag pixel ">Server: PrimalMines</li>
+          </ul>
+        </div>
+        <div class="skill-group" id="plugin-6">
+          <h3 class="skill-group-title ">Forge</h3>
+          <p class="skill-group-desc ">The forge was an addon to the slayers. Using the shards you drop from each boss you can craft armor weapons pets and more. It wasn't really optimised for speed though since you have to manually run a command to add an item to the forge. It worked fine though and i really like it!</p><br>
+          <ul class="skill-list">
+            <li class="tag pixel ">Skript</li>
+            <li class="tag pixel ">Server: PrimalMines</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────── -->
+  <footer class="proj-footer">
+    <div class="container">
+      <div class="contact-bottom">
+        <span class="footer-note">&copy; <span id="year"></span> Fin Diepman</span>
+        <div class="social-links">
+          <a href="https://github.com/FinDiepman" target="_blank" rel="noopener" class="social-link">GitHub</a>
+          <a href="mailto:fin@findiepman.dev" class="social-link">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="dist/app.js" defer></script>
+</body>
+</html>

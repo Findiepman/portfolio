@@ -14,8 +14,10 @@
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/minecraft.css" />
   <link rel="stylesheet" href="css/skills.css" />
   <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/commissions.css" />
   <link rel="stylesheet" href="css/contact.css" />
 </head>
 <body>
@@ -26,10 +28,12 @@
       <a href="#" class="nav-logo pixel">findiepman<span class="accent">.dev</span></a>
 
       <ul class="nav-links">
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#skills"   class="nav-link">Skills</a></li>
-        <li><a href="#about"    class="nav-link">About</a></li>
-        <li><a href="#contact"  class="nav-link">Contact</a></li>
+        <li><a href="#projects"     class="nav-link">Projects</a></li>
+        <li><a href="minecraft.html" class="nav-link">Minecraft</a></li>
+        <li><a href="#skills"       class="nav-link">Skills</a></li>
+        <li><a href="#about"        class="nav-link">About</a></li>
+        <li><a href="#commissions"  class="nav-link">Commissions</a></li>
+        <li><a href="#contact"      class="nav-link">Contact</a></li>
       </ul>
 
       <a href="mailto:fin@findiepman.dev" class="btn btn-solid nav-cta">Email me</a>
@@ -40,10 +44,12 @@
     </nav>
 
     <div class="mobile-menu" id="mobile-menu">
-      <a href="#projects" class="mobile-link">Projects</a>
-      <a href="#skills"   class="mobile-link">Skills</a>
-      <a href="#about"    class="mobile-link">About</a>
-      <a href="#contact"  class="mobile-link">Contact</a>
+      <a href="#projects"     class="mobile-link">Projects</a>
+      <a href="minecraft.html" class="mobile-link">Minecraft</a>
+      <a href="#skills"       class="mobile-link">Skills</a>
+      <a href="#about"        class="mobile-link">About</a>
+      <a href="#commissions"  class="mobile-link">Commissions</a>
+      <a href="#contact"      class="mobile-link">Contact</a>
       <a href="mailto:fin@findiepman.dev" class="mobile-link accent">Email me</a>
     </div>
   </header>
@@ -123,21 +129,6 @@
           </div>
         </article>
 
-        <article class="project-card">
-          <a href="projects/notes-app.html" class="card-media">
-            <img src="img/notes-app.png" alt="Screenshot of the Notes app" loading="lazy" />
-          </a>
-          <div class="card-body">
-            <h3 class="card-title">Notes App</h3>
-            <p class="card-desc todo">[ Describe this project: what it does, what you used, what you learned. ]</p>
-            <ul class="card-tags">
-              <li class="tag pixel">[ tech ]</li>
-              <li class="tag pixel">[ tech ]</li>
-            </ul>
-            <a href="projects/notes-app.html" class="card-link">View project &rarr;</a>
-          </div>
-        </article>
-
         <article class="project-card card-empty">
           <div class="card-empty-inner">
             <span class="pixel card-empty-label">next project loading&hellip;</span>
@@ -149,7 +140,52 @@
     </div>
   </section>
 
-  <div class="strata" aria-hidden="true" style="--sbg:#FFFFFF; --s1:#E9DFF8; --s2:#B990EE; --s3:#B990EE"></div>
+  <div class="strata" aria-hidden="true" style="--sbg:#FFFFFF; --s1:#E9DFF8; --s2:#E9DFF8; --s3:#F8F4FE"></div>
+
+  <!-- ── Minecraft ─────────────────────────────────────── -->
+  <section id="minecraft">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow pixel">Minecraft</p>
+        <h2 class="section-title">Plugins &amp; Skripts</h2>
+        <p class="section-sub">Here you can view some of my custom plugins! I either develop them for my own servers or for other servers. Either way i'm displaying them here.</p>
+      </div>
+
+      <!--
+        HOW TO FILL IN A PLUGIN/SKRIPT TEASER CARD:
+        1. Replace the .todo text with a one-line summary — the full story goes on minecraft.html.
+        2. Point the href at the matching #plugin-id block on minecraft.html.
+        3. To add another one: duplicate a .mc-card block below (the grid grows automatically).
+      -->
+      <div class="mc-grid">
+
+        <a href="minecraft.html#plugin-1" class="skill-group mc-card">
+          <h3 class="skill-group-title todo">PrimalMinesCore</h3>
+          <p class="skill-group-desc todo">My prized possession. The plugin that does it all. It consists of around 12 modules each playing a vital part in my server.</p>
+          <ul class="skill-list">
+            <li class="tag pixel">Java</li>
+          </ul>
+          <span class="card-link">Read more &rarr;</span>
+        </a>
+
+        <a href="minecraft.html#plugin-4" class="skill-group mc-card">
+          <h3 class="skill-group-title todo">Gens</h3>
+          <p class="skill-group-desc todo">A generator plugin with 30 total generator types with sell wands, a genshop upgrade menu and a lot more cool stuff!</p>
+          <ul class="skill-list">
+            <li class="tag pixel">Java</li>
+          </ul>
+          <span class="card-link">Read more &rarr;</span>
+        </a>
+
+      </div>
+
+      <div class="mc-cta">
+        <a href="minecraft.html" class="btn btn-solid">See all Minecraft work &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="strata" aria-hidden="true" style="--sbg:#F8F4FE; --s1:#E9DFF8; --s2:#B990EE; --s3:#B990EE"></div>
 
   <!-- ── Skills ─────────────────────────────────────────── -->
   <section id="skills">
@@ -258,7 +294,88 @@
     </div>
   </section>
 
-  <div class="strata" aria-hidden="true" style="--sbg:#997EBD; --s1:#5E1EB0; --s2:#5E1EB0; --s3:#5E1EB0"></div>
+  <div class="strata" aria-hidden="true" style="--sbg:#997EBD; --s1:#B990EE; --s2:#E9DFF8; --s3:#FFFFFF"></div>
+
+  <!-- ── Commissions ────────────────────────────────────── -->
+  <section id="commissions">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow pixel">Commissions</p>
+        <h2 class="section-title">Let's build something</h2>
+        <p class="section-sub">Open for commissions: Discord bots, Minecraft plugins, Skripts or small websites.</p>
+      </div>
+
+      <!--
+        HOW TO FILL IN A SERVICE CARD:
+        Replace the .todo starting price once you've settled on one. Everything else
+        is ready to go.
+      -->
+      <div class="commissions-grid">
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Discord Bots</h3>
+          <p class="skill-group-desc">A custom bot for your discord server. Think of things like reaction roles, embed builders, giveaways, tickets and many more possibilities <br>(I can also host it for a monthly fee)</p>
+          <ul class="skill-list">
+            <li class="tag pixel">starting at &euro;5</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Minecraft Plugins/Skripts</h3>
+          <p class="skill-group-desc">I can create Java plugins or Skripts with the features that you want. Pricing differs between how large of a project it is and if it's a skript or a plugin.</p>
+          <ul class="skill-list">
+            <li class="tag pixel">starting at &euro;2</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Websites</h3>
+          <p class="skill-group-desc">Small high quality websites for your local business or your own project showcase! I can do it for you. You tell me what you want and i create it!</p><br>
+          <ul class="skill-list">
+            <li class="tag pixel">starting at &euro;150</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <span class="process-num pixel">01</span>
+          <h4>Get in touch</h4>
+          <p>Create a ticket in my Discord or send me an <a href="mailto:fin@findiepman.dev?subject=Commission%20inquiry">Email</a> and we can get started.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num pixel">02</span>
+          <h4>Scope &amp; quote</h4>
+          <p>We go over the details and decide the final project and its price.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num pixel">03</span>
+          <h4>50% deposit</h4>
+          <p>A 50% upfront deposit before i get to work. The other 50% when i'm done.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num pixel">04</span>
+          <h4>Build &amp; deliver</h4>
+          <p>I deliver the final project and you have the chance to give some critism.</p>
+        </div>
+      </div>
+
+      <div class="commission-cta">
+        <div class="commission-payment">
+          <p class="aside-label pixel">payment</p>
+          <p>Paid through PayPal (Goods &amp; Services), so you're covered too. I ask for 50% upfront before starting, the rest on delivery.</p>
+        </div>
+        <div class="commission-actions">
+          <a href="mailto:fin@findiepman.dev?subject=Commission%20inquiry" class="btn btn-solid">Email me</a>
+          <a href="https://discord.gg/your-invite-here" target="_blank" rel="noopener" class="btn btn-outline todo">Message me on Discord</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="strata" aria-hidden="true" style="--sbg:#FFFFFF; --s1:#B990EE; --s2:#914AF7; --s3:#5E1EB0"></div>
 
   <!-- ── Contact ────────────────────────────────────────── -->
   <footer id="contact">
