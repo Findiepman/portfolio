@@ -285,10 +285,256 @@ function initLightbox(): void {
   });
 }
 
+// ── Minecraft plugin library: compact cards + detail modal ─
+// Renders every entry of MC_PLUGINS (src/plugins.ts) into the
+// #mc-plugins grid on minecraft.html. Clicking a card opens a
+// modal with the full write-up; the open plugin is addressable
+// as minecraft#<slug>.
+function initMcPlugins(): void {
+  const grid = document.getElementById("mc-plugins");
+  if (!grid || typeof MC_PLUGINS === "undefined" || MC_PLUGINS.length === 0) return;
+
+  const h = <K extends keyof HTMLElementTagNameMap>(
+    tag: K,
+    className = "",
+    text = ""
+  ): HTMLElementTagNameMap[K] => {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    if (text) el.textContent = text;
+    return el;
+  };
+
+  const metaLine = (p: McPlugin): string =>
+    [...p.technologies, ...(p.platform ? [p.platform] : [])].join(" · ");
+
+  // ── Modal shell (one instance, refilled per plugin) ──
+  const modal = h("div", "mc-modal");
+  modal.setAttribute("role", "dialog");
+  modal.setAttribute("aria-modal", "true");
+  modal.setAttribute("aria-labelledby", "mc-modal-title");
+  modal.innerHTML = `
+    <div class="mc-modal-panel">
+      <button type="button" class="mc-modal-close" aria-label="Close">&times;</button>
+      <div class="mc-modal-scroll" tabindex="-1">
+        <div class="mc-modal-media"><img class="mc-modal-img" alt="" /></div>
+        <div class="mc-modal-body">
+          <p class="mc-modal-kicker pixel"></p>
+          <h3 class="mc-modal-title" id="mc-modal-title"></h3>
+          <div class="mc-modal-sections"></div>
+        </div>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+
+  const panel    = modal.querySelector<HTMLElement>(".mc-modal-panel")!;
+  const scroller = modal.querySelector<HTMLElement>(".mc-modal-scroll")!;
+  const media    = modal.querySelector<HTMLElement>(".mc-modal-media")!;
+  const img      = modal.querySelector<HTMLImageElement>(".mc-modal-img")!;
+  const kicker   = modal.querySelector<HTMLElement>(".mc-modal-kicker")!;
+  const title    = modal.querySelector<HTMLElement>(".mc-modal-title")!;
+  const sections = modal.querySelector<HTMLElement>(".mc-modal-sections")!;
+  const closeBtn = modal.querySelector<HTMLButtonElement>(".mc-modal-close")!;
+
+  const LINK_LABELS: Record<string, string> = {
+    github: "GitHub",
+    discord: "Discord",
+    spigot: "SpigotMC",
+    modrinth: "Modrinth",
+  };
+
+  const fill = (p: McPlugin): void => {
+    kicker.textContent = metaLine(p);
+    title.textContent = p.name;
+
+    if (p.image) {
+      img.src = p.image;
+      img.alt = `${p.name} screenshot`;
+      media.hidden = false;
+    } else {
+      img.removeAttribute("src");
+      media.hidden = true;
+    }
+
+    sections.replaceChildren();
+
+    // About — reuses the .proj-section styles from project-page.css
+    const about = h("div", "proj-section");
+    about.appendChild(h("h4", "proj-section-title", "about"));
+    const paras = p.longDescription
+      ? Array.isArray(p.longDescription) ? p.longDescription : [p.longDescription]
+      : [p.description];
+    paras.forEach((t) => about.appendChild(h("p", "", t)));
+    sections.appendChild(about);
+
+    if (p.features?.length) {
+      const feat = h("div", "proj-section");
+      feat.appendChild(h("h4", "proj-section-title", "features"));
+      const ul = h("ul");
+      p.features.forEach((f) => ul.appendChild(h("li", "", f)));
+      feat.appendChild(ul);
+      sections.appendChild(feat);
+    }
+
+    if (p.extra) {
+      const extra = h("div", "proj-section");
+      extra.appendChild(h("h4", "proj-section-title", "good to know"));
+      extra.appendChild(h("p", "", p.extra));
+      sections.appendChild(extra);
+    }
+
+    const stack = h("div", "proj-section");
+    stack.appendChild(h("h4", "proj-section-title", "built with"));
+    const list = h("ul", "skill-list");
+    [...p.technologies, ...(p.platform ? [p.platform] : []), ...(p.tags ?? [])]
+      .forEach((t) => list.appendChild(h("li", "tag pixel", t)));
+    if (p.server) list.appendChild(h("li", "tag pixel", `Server: ${p.server}`));
+    stack.appendChild(list);
+    sections.appendChild(stack);
+
+    const linkEntries = Object.entries(p.links ?? {}).filter(([, url]) => Boolean(url));
+    if (linkEntries.length) {
+      const linksWrap = h("div", "proj-section");
+      linksWrap.appendChild(h("h4", "proj-section-title", "links"));
+      const row = h("div", "mc-modal-links");
+      linkEntries.forEach(([key, url]) => {
+        const a = h("a", "btn btn-outline", `${LINK_LABELS[key] ?? key} →`);
+        a.href = url as string;
+        a.target = "_blank";
+        a.rel = "noopener";
+        row.appendChild(a);
+      });
+      linksWrap.appendChild(row);
+      sections.appendChild(linksWrap);
+    }
+  };
+
+  // ── Scroll lock without layout shift (compensates the
+  //    disappearing scrollbar on body + the fixed header) ──
+  const header = document.getElementById("site-header");
+  const lockScroll = (): void => {
+    const gap = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = "hidden";
+    if (gap > 0) {
+      document.body.style.paddingRight = `${gap}px`;
+      if (header) header.style.paddingRight = `${gap}px`;
+    }
+  };
+  const unlockScroll = (): void => {
+    document.body.style.overflow = "";
+    document.body.style.paddingRight = "";
+    if (header) header.style.paddingRight = "";
+  };
+
+  let openSlug: string | null = null;
+  let lastFocus: HTMLElement | null = null;
+
+  const openModal = (p: McPlugin, updateUrl: boolean): void => {
+    fill(p);
+    openSlug = p.slug;
+    lastFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    modal.classList.add("open");
+    lockScroll();
+    scroller.scrollTop = 0;
+    closeBtn.focus();
+    if (updateUrl && location.hash !== `#${p.slug}`) {
+      history.pushState(null, "", `#${p.slug}`);
+    }
+  };
+
+  const closeModal = (updateUrl: boolean): void => {
+    if (!openSlug) return;
+    openSlug = null;
+    modal.classList.remove("open");
+    unlockScroll();
+    lastFocus?.focus();
+    lastFocus = null;
+    if (updateUrl && location.hash) {
+      history.pushState(null, "", location.pathname + location.search);
+    }
+  };
+
+  // ── Cards ──
+  MC_PLUGINS.forEach((p) => {
+    const card = h("button", "mc-plugin-card");
+    card.type = "button";
+    card.setAttribute("aria-haspopup", "dialog");
+
+    const head = h("span", "mc-plugin-head");
+    if (p.icon) {
+      const ic = h("img", "mc-plugin-icon");
+      ic.src = p.icon;
+      ic.alt = "";
+      head.appendChild(ic);
+    }
+    head.appendChild(h("span", "mc-plugin-name", p.name));
+    card.appendChild(head);
+
+    card.appendChild(h("span", "mc-plugin-meta pixel", metaLine(p)));
+    card.appendChild(h("span", "mc-plugin-desc", p.description));
+
+    if (p.tags?.length) {
+      const tags = h("span", "mc-plugin-tags");
+      p.tags.forEach((t) => tags.appendChild(h("span", "tag pixel", t)));
+      card.appendChild(tags);
+    }
+
+    card.appendChild(h("span", "mc-plugin-view", "view →"));
+    card.addEventListener("click", () => openModal(p, true));
+    grid.appendChild(card);
+  });
+
+  // ── Close interactions ──
+  closeBtn.addEventListener("click", () => closeModal(true));
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal(true);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!openSlug) return;
+    if (e.key === "Escape") {
+      closeModal(true);
+      return;
+    }
+    // Keep Tab focus inside the modal while it's open
+    if (e.key === "Tab") {
+      const focusables = Array.from(
+        panel.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')
+      );
+      const first = focusables[0];
+      const last  = focusables[focusables.length - 1];
+      if (!first || !last) return;
+      const active = document.activeElement;
+      if (e.shiftKey && (active === first || !panel.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  // ── Deep links: minecraft#<slug> opens the matching modal,
+  //    and back/forward keep it in sync ──
+  const syncToHash = (): void => {
+    const slug = decodeURIComponent(location.hash.slice(1));
+    const p = slug ? MC_PLUGINS.find((x) => x.slug === slug) : undefined;
+    if (p) {
+      if (openSlug !== p.slug) openModal(p, false);
+    } else {
+      closeModal(false);
+    }
+  };
+  window.addEventListener("popstate", syncToHash);
+  syncToHash();
+}
+
 // ── Add .reveal class to section content blocks ───────────
 function prepareRevealTargets(): void {
   const targets = document.querySelectorAll<HTMLElement>(
-    ".project-card, .skill-group, .aside-card"
+    ".project-card, .skill-group, .aside-card, .mc-plugin-card"
   );
 
   targets.forEach((el, i) => {
@@ -303,6 +549,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initYear();
   initSmoothScroll();
+  initMcPlugins();
   prepareRevealTargets();
   initScrollReveal();
   initActiveNav();

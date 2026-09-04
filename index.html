@@ -166,7 +166,8 @@
       <!--
         HOW TO FILL IN A PLUGIN/SKRIPT TEASER CARD:
         1. Replace the .todo text with a one-line summary — the full story goes on minecraft.html.
-        2. Point the href at the matching #plugin-id block on minecraft.html.
+        2. Point the href at minecraft#<slug> — featured blocks use their block id (e.g. #plugin-1),
+           library plugins use their slug from src/plugins.ts (e.g. #gens opens the Gens modal).
         3. To add another one: duplicate a .mc-card block below (the grid grows automatically).
       -->
       <div class="mc-grid">
@@ -180,7 +181,7 @@
           <span class="card-link">Read more &rarr;</span>
         </a>
 
-        <a href="minecraft#plugin-4" class="skill-group mc-card">
+        <a href="minecraft#gens" class="skill-group mc-card">
           <h3 class="skill-group-title">Gens</h3>
           <p class="skill-group-desc">A generator plugin with 30 total generator types with sell wands, a genshop upgrade menu and a lot more cool stuff!</p>
           <ul class="skill-list">

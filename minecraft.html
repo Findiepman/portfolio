@@ -54,13 +54,14 @@
     HOW TO FILL IN THIS PAGE:
     1. About: write a couple of paragraphs about yourself as a Minecraft dev — replace the .todo text.
     2. Facts card: fill in the test server status/IP once it exists.
-    3. Breakdown — two block styles, pick per plugin:
-       - Short block: just a name + a paragraph + tags. Good for simpler plugins/skripts.
-       - Full block (add class "mc-block--full" on the .skill-group): same, plus a .mc-modules
-         grid underneath for plugins with several systems worth explaining separately
-         (like PrimalMinesCore's 13 modules) — one .mc-module per system, name + what it does.
-       Give each block an id (plugin-1, plugin-2, ...) so the homepage teaser cards can link straight to it.
-       To add another: duplicate a block, bump the id, and add a matching teaser card on index.html.
+    3. Breakdown — two tiers:
+       - Featured block (class "mc-block--full" on a .skill-group, with an id like plugin-1):
+         the full in-page write-up, with a .mc-modules grid for plugins with several systems
+         worth explaining separately (like PrimalMinesCore's modules).
+       - Everything else lives in the plugin library: compact cards + a detail modal,
+         rendered from the MC_PLUGINS array in src/plugins.ts. Add a plugin by appending
+         one object there (see the comment at the top of that file), then run tsc.
+         Each plugin is deep-linkable as minecraft#<slug> — use that on homepage teaser cards.
   -->
 
   <!-- ── Hero ─────────────────────────────────────────── -->
@@ -187,50 +188,21 @@
           </ul>
         </div>
 
-        <div class="skill-group" id="plugin-2">
-          <h3 class="skill-group-title">Playershops</h3>
-          <p class="skill-group-desc">The playershops plugin is an easy way to have your players create their own shops. It uses my hologram plugin to display the text above. It also features a transaction log which you can connect to your discord. It has the option to blacklist a world so you dont get your spawn world filled with shops. Players can add stock add items and admins can see every shop and its contents.</p><br>
-          <ul class="skill-list">
-            <li class="tag pixel">Java</li>
-            <li class="tag pixel">Server: FerruhSMP <a href="https://discord.gg/ferruhsmp" target="_blank">Discord</a></li>
-          </ul>
-        </div>
-
-        <div class="skill-group" id="plugin-3">
-          <h3 class="skill-group-title">Claims</h3>
-          <p class="skill-group-desc">This plugin does everything other claim plugins do but better. You can trust untrust, ban unban, promote demote players. It features a settings menu where you can edit everything everyone can do on your claim. You can edit every single member's permission. You can also edit environment settings like creeper explosions, fire spread and more!</p><br>
-          <ul class="skill-list">
-            <li class="tag pixel">Java</li>
-            <li class="tag pixel">Server: FerruhSMP <a href="https://discord.gg/ferruhsmp" target="_blank">Discord</a></li>
-          </ul>
-        </div>
-        <div class="skill-group" id="plugin-4">
-          <h3 class="skill-group-title">Gens</h3>
-          <p class="skill-group-desc">This plugin was built for a gen server it features upgradable generators, a genshop virtual item stacking sell wands and more. You could stack generators shift + right click to instantly upgrade them. Sell your stash using /sell view your stash. It has a bunch of placeholders meaning you can use them to build stuff with them using skript.</p><br>
-          <ul class="skill-list">
-            <li class="tag pixel ">Java</li>
-            <li class="tag pixel ">Skript</li>
-          </ul>
-        </div>
-        <div class="skill-group" id="plugin-5">
-          <h3 class="skill-group-title">Boss Slayers</h3>
-          <p class="skill-group-desc">This skript is one of my favorites. A whole entire slayer system. It uses mythicmobs for the bosses and skript for everything else. You can level up your slayers to get some cool rewards. Drop rare drops from bosses which had entire loot tables. Each boss had its own OP pet you could drop. You could also drop their signature weapon</p><br>
-          <ul class="skill-list">
-            <li class="tag pixel ">Skript</li>
-            <li class="tag pixel ">Mythic Mobs (dependency)</li>
-            <li class="tag pixel ">Server: PrimalMines</li>
-          </ul>
-        </div>
-        <div class="skill-group" id="plugin-6">
-          <h3 class="skill-group-title ">Forge</h3>
-          <p class="skill-group-desc ">The forge was an addon to the slayers. Using the shards you drop from each boss you can craft armor weapons pets and more. It wasn't really optimised for speed though since you have to manually run a command to add an item to the forge. It worked fine though and i really like it!</p><br>
-          <ul class="skill-list">
-            <li class="tag pixel ">Skript</li>
-            <li class="tag pixel ">Server: PrimalMines</li>
-          </ul>
-        </div>
-
       </div>
+
+      <!--
+        The compact plugin cards below are rendered from src/plugins.ts
+        (dist/plugins.js). To add a plugin, append one object to the
+        MC_PLUGINS array there — no HTML changes needed. Each plugin is
+        deep-linkable as minecraft#<slug>.
+      -->
+      <div class="mc-plugins-header">
+        <p class="section-eyebrow pixel">all plugins</p>
+        <p class="section-sub">Click a card for the full breakdown.</p>
+      </div>
+
+      <div class="mc-plugins" id="mc-plugins"></div>
+      <noscript><p class="section-sub">The plugin library needs JavaScript to render. Sorry!</p></noscript>
     </div>
   </section>
 
@@ -247,6 +219,7 @@
     </div>
   </footer>
 
+  <script src="dist/plugins.js" defer></script>
   <script src="dist/app.js" defer></script>
 </body>
 </html>
